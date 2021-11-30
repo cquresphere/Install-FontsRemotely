@@ -1,3 +1,8 @@
+<#First replace:
+	<path to psexec>
+	<path to list with hostnames/IPs to install fonts>
+#>
+
 #Check if ImportExcel module is installed
 $IsImportExcel = Get-InstalledModule -Name ImportExcel
 
@@ -8,7 +13,7 @@ if($IsImportExcel -eq $null){
 $ComputerTo = Import-Excel -Path <path to list with hostnames/IPs to install fonts>  | %{$_.HostName}
 
 
-# Enter you path to psexec
+# Enter your path to psexec
 $PsExecPath = '<path to psexec>\psexec.exe'
 #Computers to install fonts to
 $ComputerArray= $ComputerTo 
